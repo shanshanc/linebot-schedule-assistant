@@ -1,0 +1,22 @@
+{
+  "name": "linebot_schedule_assistant",
+  "version": "1.0.0",
+  "description": "A linebot that reads user message in a group chat and update Google Sheet cells",
+  "main": "src/Code.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "author": "Shanshan Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "gas-local": "^1.3.1",
+    "mocha": "^11.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
