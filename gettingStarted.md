@@ -1,20 +1,20 @@
 ## Getting Started
 
-### Environment
+### Local Environment
 It's easier to develop and test this project in local environment. Node.js (>= v20) is needed.
 
 Fork and clone this repo, then
 `npm install`
 
-#### Create App Script Project & Set gas-local
+### Create App Script Project & Set gas-local
 [Create an App Script Project](https://developers.google.com/apps-script/guides/projects#create-and-delete) from UI or using [clasp](https://developers.google.com/apps-script/guides/clasp)
 
-**Find and copy the proejct id**
+**Find and copy the proejct id**\
 Open your Google Apps Script project, go to Project settings, and under "IDs", copy the Script ID
 
 ![image](/assets/images/projectId.png)
 
-**Set `.clasp.json`**
+**Set `.clasp.json`**\
 Set the copied Script ID to the `scriptId` property in `.clasp.json` file in the root foler of the project.
 
 Also, specifiy project path in the `rootDir` property.
@@ -46,7 +46,7 @@ We'll be using the following servicesa and set them in App Script Properties.
 Log in LINE developer console
 https://developers.line.biz/en/
 
-**Channel Access Token**
+**Channel Access Token**\
 Channel Access Token can be found in the bottom of the Message API settings.
 
 Create an Official LINE accounta and enable Message API if there is no chnnel in LINE developer console following this [doc](https://developers.line.biz/en/news/2024/09/04/no-longer-possible-to-create-messaging-api-channels-from-console/).
@@ -56,26 +56,26 @@ Copy and set it to the CHANNEL_ACCESS_TOKEN field under Script Properties in App
 
 ![image](/assets/images/gasScriptProperties.png)
 
-**Webhook**
+**Webhook**\
 Enable webhook
 ![image](/assets/images/webHook.png)
 
 Paste the web app url in webhook and click update
 ![image](/assets//images/webhookUrl.png)
 
-**Add LINE bot to a group chat**
+**Add LINE bot to a group chat**\
 Invite your LINE bot to a group chat.
 
 #### Google Sheet & Folder
 
-**Course Schedule Sheet**
+**Course Schedule Sheet**\
 Copy the [example sheet](https://docs.google.com/spreadsheets/d/1ttMUhEpUvvrrrxgq1MsoADe6zaalyjrVj12pB4JJaFU/edit?usp=sharing) and set the permission to be "Edit for Everyone with Link" so that App Script can edit it ([Share a file in Drive](https://support.google.com/a/users/answer/9310248?hl=en#Drive_share_files)).
 
 Copy the shared link and set it to the SCHEDULE_URL feild under Script Properties in App Script settings.
 
 ![image](/assets/images/gasScriptProperties.png)
 
-**Student Record Folder**
+**Student Record Folder**\
 Copy teh [example folder](https://drive.google.com/drive/folders/1UDs6RcVO7lEZiphgDU4saItggqoG-w47?usp=sharing) and set the folder permission to be "Edit for Everyone with Link" so that App Script can parse all files in this folder and make necessary changes.
 
 Copy [folder ID](https://ploi.io/documentation/database/where-do-i-get-google-drive-folder-id) and set it to the USER_FOLDER_ID field under Script Properties in App Script settings.
