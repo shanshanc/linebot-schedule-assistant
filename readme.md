@@ -35,7 +35,7 @@ A screenshot of this project (seal is the bot):
 
 In additional to the project codebase, a LINE Access Token, Google Sheet ([example](https://docs.google.com/spreadsheets/d/1ttMUhEpUvvrrrxgq1MsoADe6zaalyjrVj12pB4JJaFU/edit?usp=sharing)) and a Google Drive folder ([example](https://drive.google.com/drive/folders/1UDs6RcVO7lEZiphgDU4saItggqoG-w47?usp=sharing)) that contains user files are needed. They are defined as, `CHANNEL_ACCESS_TOKEN`, `SCHEDULE_URL` and `USER_FOLDER_ID`, respectively, in Google App Script script properties or the local `.env` file.
 
-![image](https://github.com/shanshanc/linebot-schedule-assistant/blob/master/assets/images/gasScriptProp.png)
+![image](/assets/images/gasScriptProperties.png)
 
 
 ## Development & Testing
