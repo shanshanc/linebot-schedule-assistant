@@ -27,9 +27,8 @@ function createStudentIdMap() {
         url: fileUrl
       }
     }
-
-    return studentMap;
   }
+  return studentMap;
 }
 
 function addRecord(list, name) {
