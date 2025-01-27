@@ -189,6 +189,11 @@ function updateScheduleSheet({ content, rowNum, colNum }) {
   return res;
 }
 
+/*
+ * getScheduleSheet
+ * Get course schedule sheet that's defined in the script properties
+ * @return {object} Goolge Sheet object - course schedule
+ */
 function getScheduleSheet() {
   const scheduleUrl = PropertiesService.getScriptProperties().getProperties()[SCHEDULE_URL];
   const scheduleSheet = SpreadsheetApp.openByUrl(scheduleUrl);

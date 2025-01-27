@@ -2,6 +2,70 @@ const gas = require('gas-local');
 const assert = require('assert');
 let glib;
 
+class fakeFile {
+  constructor(url, name) {
+    this.url = url || 'fileUrl';
+    this.name = name || 'fileName';
+  }
+  getUrl() {
+    return this.url;
+  }
+  getName() {
+    return this.name;
+  }
+}
+
+describe('Test createStudentIdMap', function() {
+  before(() => {
+    glib = {};
+  });
+
+  it('create student id map', function() {
+    const mockFiles = [
+      {url: 'url1', name: '001_a_name1'},
+      {url: 'url2', name: '002_b_name2'}
+    ]
+    // dependencies
+    glib = gas.require('./src');
+    glib.getStudentFiles = function makeIterator(array = mockFiles) {
+      let nextIndex = 0;
+      let end = array.length;
+    
+      const myIterator = {
+        hasNext() {
+          return nextIndex < end;
+        },
+        next() {
+          let result;
+          if (nextIndex < end) {
+            const { url, name } = array[nextIndex];
+            result = new fakeFile(url, name);
+            nextIndex++;
+            return result;
+          }
+          return null;
+        }
+      }
+    
+      return myIterator;
+    }
+
+    // expected
+    const expected = {
+      '001': {
+        displayName: 'name1',
+        url: 'url1'
+      },
+      '002': {
+        displayName: 'name2',
+        url: 'url2'
+      }
+    }
+
+    assert.deepEqual(glib.createStudentIdMap(), expected);
+  })
+});
+
 describe('Test handleUser add record to student file', function() {
   beforeEach(() => {
     glib = {};
